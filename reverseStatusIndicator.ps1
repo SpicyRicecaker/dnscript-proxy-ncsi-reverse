@@ -44,7 +44,8 @@ Set-ItemProperty -Path $Internet -Name EnableActiveProbing -Value 1
 # Reset desired string in `ncsi.txt`
 # Reset website address where `ncsi.txt` is located
 # Reset path to file where active dns probes are
-$EntriesToRemove = ("ActiveDnsProbeHost", "131.107.255.255", "fd3e:4f5a:5b81::1"), ("ActiveDnsProbeHost", "dns.msftncsi.com"), ("ActiveWebProbeContent", "Microsoft Connect Test"), ("ActiveWebProbehost", "www.msftconnecttest.com", "ipv6.msftconnecttest.com"), ("ActiveWebProbePath", "connecttest.txt")
+# $EntriesToRemove = ("ActiveDnsProbeHost", "131.107.255.255", "fd3e:4f5a:5b81::1"), ("ActiveDnsProbeHost", "dns.msftncsi.com"), ("ActiveWebProbeContent", "Microsoft Connect Test"), ("ActiveWebProbehost", "www.msftconnecttest.com", "ipv6.msftconnecttest.com"), ("ActiveWebProbePath", "connecttest.txt")
+$EntriesToRemove = ("ActiveDnsProbeHost", "dns.google", "dns.google"), ("ActiveDnsProbeHost", "dns.google"), ("ActiveWebProbeContent", "8.8.4.4"), ("ActiveWebProbehost", "dns.google", "dns.google"), ("ActiveWebProbePath", "connecttest.txt")
 
 Set-AllNetworkbothIPvs $Internet $EntriesToRemove
 
